@@ -6,7 +6,7 @@
 #    By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/26 09:58:12 by adenord           #+#    #+#              #
-#    Updated: 2023/07/28 11:23:46 by adenord          ###   ########.fr        #
+#    Updated: 2023/07/28 17:09:06 by adenord          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,8 @@ SRCS_ADDITIONAL = ./srcs/additional_fct/ft_memccpy.c \
 ./srcs/additional_fct/ft_strcat.c ./srcs/additional_fct/ft_strcmp.c \
 ./srcs/additional_fct/ft_strcpy.c ./srcs/additional_fct/ft_strncat.c \
 ./srcs/additional_fct/ft_strncpy.c ./srcs/additional_fct/ft_strstr.c \
-./srcs/additional_fct/get_next_line.c
+./srcs/additional_fct/get_next_line.c ./srcs/additional_fct/ft_putstr.c \
+./srcs/additional_fct/ft_putchar.c ./srcs/additional_fct/ft_putnbr.c
 
 
 SRCS_M = $(SRCS1) $(SRCS2)

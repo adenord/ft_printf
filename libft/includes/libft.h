@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:56:09 by adenord           #+#    #+#             */
-/*   Updated: 2023/07/28 11:30:25 by adenord          ###   ########.fr       */
+/*   Updated: 2023/07/28 17:08:45 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,5 +106,8 @@ char		*ft_strncat(char *s1, const char *s2, size_t n);
 char		*ft_strstr(const char *haystack, const char *needle);
 int			ft_strcmp(const char *s1, const char *s2);
 char		*get_next_line(int fd);
+void		ft_putstr(const char *str);
+void		ft_putchar(char c);
+void		ft_putnbr(int nb);
 
 #endif
