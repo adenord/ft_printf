@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 16:28:12 by adenord           #+#    #+#             */
-/*   Updated: 2023/07/28 17:50:49 by adenord          ###   ########.fr       */
+/*   Updated: 2023/07/29 10:39:32 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int	handling_args(const char *format, va_list args, int size)
 				ft_putchar(va_arg(args, int));
 			if (format[i + 1] == '%')
 				ft_putchar('%');
+			if (format[i + 1] == 'u')
+				display_unsigned(va_arg(args, int));
 			i++;
 		}
 		i++;

@@ -6,15 +6,15 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 17:07:07 by adenord           #+#    #+#             */
-/*   Updated: 2023/07/28 17:08:25 by adenord          ###   ########.fr       */
+/*   Updated: 2023/07/29 11:04:04 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nb)
+void	ft_putnbr(long nb)
 {
-	unsigned int	number;
+	unsigned long	number;
 
 	if (nb < 0)
 	{
