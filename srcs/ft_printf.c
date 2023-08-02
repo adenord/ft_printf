@@ -6,11 +6,11 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 14:17:26 by adenord           #+#    #+#             */
-/*   Updated: 2023/07/28 16:36:55 by adenord          ###   ########.fr       */
+/*   Updated: 2023/07/31 12:00:45 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_printf(const char *format, ...)
 {
@@ -24,5 +24,5 @@ int	ft_printf(const char *format, ...)
 		return (ft_strlen(format));
 	}
 	va_start(args, format);
-	return (handling_args(format, args, size));
+	return (handling_args(format, args));
 }

@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   display_unsigned.c                                 :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/29 10:31:17 by adenord           #+#    #+#             */
-/*   Updated: 2023/07/31 12:00:18 by adenord          ###   ########.fr       */
+/*   Created: 2023/07/29 12:04:09 by adenord           #+#    #+#             */
+/*   Updated: 2023/07/29 12:04:42 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	display_unsigned(int nbr)
-{
-	long ov;
+void	ft_strrev(char *str)
+{	
+	int		i;
+	int		end;
+	char	temp;
+	int		len;
 
-	if (nbr < 0)
+	i = 0;
+	len = ft_strlen(str);
+	end = len - 1;
+	while (i < (len / 2))
 	{
-		nbr = -nbr;
-		ov = (4294967295 - nbr) + 1;
-		ft_putnbr(ov);
+		temp = str[i];
+		str[i] = str[end];
+		str[end] = temp;
+		i++;
+		end--;
 	}
-	else
-		ft_putnbr(nbr);
 }

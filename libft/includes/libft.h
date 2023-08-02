@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:56:09 by adenord           #+#    #+#             */
-/*   Updated: 2023/07/29 11:04:36 by adenord          ###   ########.fr       */
+/*   Updated: 2023/07/29 12:05:00 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,5 +109,6 @@ char		*get_next_line(int fd);
 void		ft_putstr(const char *str);
 void		ft_putchar(char c);
 void		ft_putnbr(long nb);
+void		ft_strrev(char *str);
 
 #endif

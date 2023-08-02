@@ -5,10 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/07/26 09:58:12 by adenord           #+#    #+#              #
-#    Updated: 2023/07/29 12:05:23 by adenord          ###   ########.fr        #
+#    Created: 2023/07/29 17:32:43 by adenord           #+#    #+#              #
+#    Updated: 2023/07/31 18:52:43 by adenord          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+SRCS =./srcs/nbr_args.c ./srcs/ft_printf.c ./srcs/display_hexa.c \
+./srcs/handling_args.c ./srcs/display_address.c ./srcs/display_unsigned.c
 
 SRCS1 =./srcs/part1/ft_atoi.c ./srcs/part1/ft_bzero.c ./srcs/part1/ft_calloc.c \
 ./srcs/part1/ft_isalnum.c ./srcs/part1/ft_isalpha.c ./srcs/part1/ft_isascii.c \
@@ -42,33 +45,34 @@ SRCS_ADDITIONAL = ./srcs/additional_fct/ft_memccpy.c \
 ./srcs/additional_fct/ft_strrev.c
 
 
-SRCS_M = $(SRCS1) $(SRCS2)
-SRCS_M_BONUS = $(SRCS1) $(SRCS2) $(SRCS_BONUS)
-SRCS_M_BONUS_ADDITIONAL = $(SRCS1) $(SRCS2) $(SRCS_BONUS) $(SRCS_ADDITIONAL)
-OBJS_M = $(SRCS_M:.c=.o)
-OBJS_M_BONUS = $(SRCS_M_BONUS:.c=.o)
-OBJS_M_BONUS_ADDITIONAL = $(SRCS_M_BONUS_ADDITIONAL:.c=.o)
-NAME_LIB = libft.a
+SRCS1_PATH = $(patsubst ./srcs/part1/%, ./libft/srcs/part1/%, $(SRCS1))
+SRCS2_PATH = $(patsubst ./srcs/part2/%, ./libft/srcs/part2/%, $(SRCS2))
+SRCS_BONUS_PATH = $(patsubst ./srcs/bonus/%, ./libft/srcs/bonus/%, $(SRCS_BONUS))
+SRCS_ADDITIONAL_PATH = $(patsubst ./srcs/additional_fct/%, ./libft/srcs/additional_fct/%, $(SRCS_ADDITIONAL))
+
+LIB_OBJS = $(SRCS1_PATH:.c=.o) $(SRCS2_PATH:.c=.o) $(SRCS_BONUS_PATH:.c=.o) $(SRCS_ADDITIONAL_PATH:.c=.o)
+
+OBJS = $(SRCS:.c=.o)
+
+NAME_LIB = libftprintf.a
+
 GCC = gcc -Wall -Wextra -Werror -I includes/
 
-all : additional
+all : $(NAME_LIB)
 
-.c.o :
+.c.o : 
 	$(GCC) -c $< -o $(<:.c=.o)
 
-$(NAME_LIB) : fclean $(OBJS_M)
-	ar rcs $@ $(OBJS_M)
-
-bonus : fclean $(OBJS_M_BONUS)
-	ar rcs $(NAME_LIB) $(OBJS_M_BONUS)
-
-additional : fclean $(OBJS_M_BONUS_ADDITIONAL)
-	ar rcs $(NAME_LIB) $(OBJS_M_BONUS_ADDITIONAL)
+$(NAME_LIB) : libft $(OBJS)
+	make -C libft/
+	ar rcs $@ $(OBJS) $(LIB_OBJS)
 
 clean :
-	rm -rf $(OBJS_M_BONUS_ADDITIONAL)
+	make -C libft/ clean
+	rm -rf $(OBJS)
 
 fclean : clean
-	rm -rf $(NAME_LIB)
+	make -C libft/ clean
+	rm -rf libftprintf.a
 
 re : fclean all
