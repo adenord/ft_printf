@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 16:39:11 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/06 16:51:17 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/06 17:15:42 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	display_list(t_list *lst)
 {
-	size_t		i;
+	size_t	i;
 	char	*str;
 
 	while (lst)

@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:34:18 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/05 20:11:40 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/06 17:17:07 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	replace_and_add(t_list **lst, va_list args)
 		if (temp[0] == '%' && (temp[1] == 'd' || temp[1] == 'i'))
 			t_temp = fct_integer(lst, t_temp, va_arg(args, int));
 		if (temp[0] == '%' && temp[1] == 's')
-			t_temp = fct_string(lst, t_temp, va_arg(args, char*));
+			t_temp = fct_string(lst, t_temp, va_arg(args, char *));
 		if (temp[0] == '%' && temp[1] == '%')
 			t_temp = fct_string(lst, t_temp, "%");
 		if (temp[0] == '%' && temp[1] == 'c')

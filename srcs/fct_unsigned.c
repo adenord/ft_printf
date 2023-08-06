@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 10:31:17 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/05 19:33:47 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/06 17:15:15 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ static char	*ft_itoun(unsigned int nbr)
 		nbr /= 10;
 		i++;
 	}
-	temp[i] ='\0';
+	temp[i] = '\0';
 	ft_strrev(temp);
 	return (ft_strdup(temp));
 }
 
 t_list	*fct_unsigned(t_list **lst, t_list *elem, int arg)
 {
-	unsigned int ov;
-	t_list	*new;
+	unsigned int	ov;
+	t_list			*new;
 
 	if (arg < 0)
 	{

@@ -6,14 +6,14 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 12:04:09 by adenord           #+#    #+#             */
-/*   Updated: 2023/07/29 12:04:42 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/06 17:27:10 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void	ft_strrev(char *str)
-{	
+{
 	int		i;
 	int		end;
 	char	temp;
