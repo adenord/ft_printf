@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 15:56:09 by adenord           #+#    #+#             */
-/*   Updated: 2023/07/29 12:05:00 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/06 16:52:56 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 
 typedef struct s_list {
 	void			*content;
+	size_t			len;
 	struct s_list	*next;
 }					t_list;
 
@@ -91,6 +92,7 @@ void		ft_lstdelone(t_list *lst, void (*del)(void *));
 void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void *));
+t_list		*ft_lst_insert(t_list *lst, t_list **elem, t_list *new);
 
 /* ************************ */
 /*                          */

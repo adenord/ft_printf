@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_lst_insert.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/28 14:17:26 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/06 16:50:47 by adenord          ###   ########.fr       */
+/*   Created: 2023/08/02 14:50:01 by adenord           #+#    #+#             */
+/*   Updated: 2023/08/05 10:12:44 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	del_lst(void *content)
+t_list	*ft_lst_insert(t_list *lst, t_list **elem, t_list *new)
 {
-	free(content);
-}
-
-int	ft_printf(const char *format, ...)
-{
-	va_list		args;
-	t_list		*lst;
-	size_t		len;
-
-	va_start(args, format);
-	lst = cutting(format);
-	replace_and_add(&lst, args);
-	display_list(lst);
-	len = ft_lst_strlen(lst);
-	ft_lstclear(&lst, &del_lst);
-	va_end(args);
-	return (len);
+	while (lst->next != *elem)
+		lst = lst->next;
+	new->next = *elem;
+	lst->next = new;
+	return (new);
 }

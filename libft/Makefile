@@ -6,7 +6,7 @@
 #    By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/26 09:58:12 by adenord           #+#    #+#              #
-#    Updated: 2023/07/29 12:05:23 by adenord          ###   ########.fr        #
+#    Updated: 2023/08/02 14:56:48 by adenord          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ SRCS2 = ./srcs/part2/ft_itoa.c ./srcs/part2/ft_putchar_fd.c \
 SRCS_BONUS = ./srcs/bonus/ft_lstadd_back.c ./srcs/bonus/ft_lstadd_front.c \
 ./srcs/bonus/ft_lstclear.c ./srcs/bonus/ft_lstdelone.c \
 ./srcs/bonus/ft_lstiter.c ./srcs/bonus/ft_lstlast.c ./srcs/bonus/ft_lstmap.c \
-./srcs/bonus/ft_lstnew.c ./srcs/bonus/ft_lstsize.c
+./srcs/bonus/ft_lstnew.c ./srcs/bonus/ft_lstsize.c ./srcs/bonus/ft_lst_insert.c
 
 
 SRCS_ADDITIONAL = ./srcs/additional_fct/ft_memccpy.c \

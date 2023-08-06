@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 17:19:42 by adenord           #+#    #+#             */
-/*   Updated: 2023/07/26 11:33:59 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/06 16:35:12 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ t_list	*ft_lstnew(void *content)
 	lst = (t_list *)ft_calloc(1, sizeof(t_list));
 	if (!lst)
 		return (NULL);
-	lst[0].next = NULL;
-	lst[0].content = content;
+	lst->next = NULL;
+	lst->content = content;
+	lst->len = ft_strlen((char *)content);
 	return (lst);
 }

@@ -6,12 +6,14 @@
 #    By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/29 17:32:43 by adenord           #+#    #+#              #
-#    Updated: 2023/07/31 18:52:43 by adenord          ###   ########.fr        #
+#    Updated: 2023/08/06 16:45:57 by adenord          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =./srcs/nbr_args.c ./srcs/ft_printf.c ./srcs/display_hexa.c \
-./srcs/handling_args.c ./srcs/display_address.c ./srcs/display_unsigned.c
+SRCS =./srcs/nbr_args.c ./srcs/ft_printf.c ./srcs/fct_hexa.c \
+./srcs/fct_address.c ./srcs/fct_unsigned.c ./srcs/cutting.c \
+./srcs/replace_and_add.c ./srcs/fct_integer.c ./srcs/fct_string.c \
+./srcs/fct_character.c ./srcs/ft_lst_strlen.c ./srcs/display_list.c
 
 SRCS1 =./srcs/part1/ft_atoi.c ./srcs/part1/ft_bzero.c ./srcs/part1/ft_calloc.c \
 ./srcs/part1/ft_isalnum.c ./srcs/part1/ft_isalpha.c ./srcs/part1/ft_isascii.c \
@@ -33,7 +35,7 @@ SRCS2 = ./srcs/part2/ft_itoa.c ./srcs/part2/ft_putchar_fd.c \
 SRCS_BONUS = ./srcs/bonus/ft_lstadd_back.c ./srcs/bonus/ft_lstadd_front.c \
 ./srcs/bonus/ft_lstclear.c ./srcs/bonus/ft_lstdelone.c \
 ./srcs/bonus/ft_lstiter.c ./srcs/bonus/ft_lstlast.c ./srcs/bonus/ft_lstmap.c \
-./srcs/bonus/ft_lstnew.c ./srcs/bonus/ft_lstsize.c
+./srcs/bonus/ft_lstnew.c ./srcs/bonus/ft_lstsize.c ./srcs/bonus/ft_lst_insert.c
 
 
 SRCS_ADDITIONAL = ./srcs/additional_fct/ft_memccpy.c \

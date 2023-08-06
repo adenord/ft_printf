@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   fct_integer.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/28 14:17:26 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/06 16:50:47 by adenord          ###   ########.fr       */
+/*   Created: 2023/08/03 15:05:38 by adenord           #+#    #+#             */
+/*   Updated: 2023/08/05 19:32:16 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	del_lst(void *content)
+t_list	*fct_integer(t_list **lst, t_list *elem, int arg)
 {
-	free(content);
-}
+	t_list	*new;
 
-int	ft_printf(const char *format, ...)
-{
-	va_list		args;
-	t_list		*lst;
-	size_t		len;
-
-	va_start(args, format);
-	lst = cutting(format);
-	replace_and_add(&lst, args);
-	display_list(lst);
-	len = ft_lst_strlen(lst);
-	ft_lstclear(&lst, &del_lst);
-	va_end(args);
-	return (len);
+	new = ft_lst_insert(*lst, &elem, ft_lstnew(ft_itoa(arg)));
+	new->next = elem->next;
+	free(elem->content);
+	free(elem);
+	return (new);
 }

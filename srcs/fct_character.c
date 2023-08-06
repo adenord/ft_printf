@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   fct_character.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/28 14:17:26 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/06 16:50:47 by adenord          ###   ########.fr       */
+/*   Created: 2023/08/05 10:37:03 by adenord           #+#    #+#             */
+/*   Updated: 2023/08/06 16:43:46 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	del_lst(void *content)
+t_list	*fct_character(t_list **lst, t_list *elem, int arg)
 {
-	free(content);
-}
+	t_list	*new;
+	char	temp[2];
 
-int	ft_printf(const char *format, ...)
-{
-	va_list		args;
-	t_list		*lst;
-	size_t		len;
-
-	va_start(args, format);
-	lst = cutting(format);
-	replace_and_add(&lst, args);
-	display_list(lst);
-	len = ft_lst_strlen(lst);
-	ft_lstclear(&lst, &del_lst);
-	va_end(args);
-	return (len);
+	temp[0] = (char)arg;
+	temp[1] = '\0';
+	new = ft_lst_insert(*lst, &elem, ft_lstnew(ft_strdup(temp)));
+	if (arg == 0)
+		new->len = 1;
+	new->next = elem->next;
+	free(elem->content);
+	free(elem);
+	return (new);
 }

@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   display_unsigned.c                                 :+:      :+:    :+:   */
+/*   ft_lst_strlen.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/29 10:31:17 by adenord           #+#    #+#             */
-/*   Updated: 2023/07/31 12:00:18 by adenord          ###   ########.fr       */
+/*   Created: 2023/08/05 17:15:03 by adenord           #+#    #+#             */
+/*   Updated: 2023/08/06 16:52:38 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	display_unsigned(int nbr)
+int	ft_lst_strlen(t_list *lst)
 {
-	long ov;
+	int	total_len;
 
-	if (nbr < 0)
+	total_len = 0;
+	while (lst)
 	{
-		nbr = -nbr;
-		ov = (4294967295 - nbr) + 1;
-		ft_putnbr(ov);
+		total_len += (int)lst->len;
+		lst = lst->next;
 	}
-	else
-		ft_putnbr(nbr);
+	return (total_len);
 }
