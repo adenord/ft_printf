@@ -6,7 +6,7 @@
 #    By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/29 17:32:43 by adenord           #+#    #+#              #
-#    Updated: 2023/08/12 18:48:45 by adenord          ###   ########.fr        #
+#    Updated: 2023/08/15 10:42:08 by adenord          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ SRCS_BONUS =./srcs_bonus/nbr_args_bonus.c ./srcs_bonus/ft_printf_bonus.c \
 ./srcs_bonus/replace_and_add_bonus.c ./srcs_bonus/fct_integer_bonus.c \
 ./srcs_bonus/fct_string_bonus.c ./srcs_bonus/fct_character_bonus.c \
 ./srcs_bonus/ft_lst_strlen_bonus.c ./srcs_bonus/display_list_bonus.c \
-./srcs_bonus/exception_handler_bonus.c
+./srcs_bonus/exception_handler_bonus.c ./srcs_bonus/gen_excp_bonus.c \
+./srcs_bonus/exception_handler_2_bonus.c
 
 LSRCS1 =./srcs/part1/ft_atoi.c ./srcs/part1/ft_bzero.c ./srcs/part1/ft_calloc.c \
 ./srcs/part1/ft_isalnum.c ./srcs/part1/ft_isalpha.c ./srcs/part1/ft_isascii.c \

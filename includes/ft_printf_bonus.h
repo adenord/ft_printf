@@ -6,12 +6,12 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:37:47 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/14 16:18:03 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/17 11:22:27 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef FT_PRINTF_BONUS_H
+# define FT_PRINTF_BONUS_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -32,10 +32,14 @@ int		ft_lst_strlen(t_list *lst);
 void	display_list(t_list *lst);
 char	*ft_itoun(unsigned int nbr);
 char	*gen_excp(char *format, char *str);
+char	*gen_excp_str(char *format, char *str);
 char	*min_width(char *format, char *str);
-void	left_aligned(char *str);
+void	left_aligned(char *str, size_t len);
 char	*precision(char *format, char *str);
 char	*zeroed(char *format, char *str);
-char	*formater(int len, int zeros, int i, char *minus, char *str);
+char	*formater(int len, int zeros, char *minus, char *str);
+char	*precision_str(char *format, char *str);
+char	*gen_excp_adr(char *format, char *str);
+t_list	*gen_excp_chr(t_list *temp2, t_list **lst, t_list *elem, int arg);
 
 #endif

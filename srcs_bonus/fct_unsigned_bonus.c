@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 10:31:17 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/14 16:57:34 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/17 11:08:09 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_itoun(unsigned int nbr)
 t_list	*fct_unsigned(t_list **lst, t_list *elem, int arg)
 {
 	unsigned int	ov;
-	t_list			*new = NULL;
+	t_list			*new;
 	char			*content;
 
 	ov = (unsigned int)arg;
@@ -42,7 +42,8 @@ t_list	*fct_unsigned(t_list **lst, t_list *elem, int arg)
 	if (ft_strlen(content) == 2)
 		new = ft_lst_insert(*lst, &elem, ft_lstnew(ft_itoun(ov)));
 	else
-		new = ft_lst_insert(*lst, &elem, ft_lstnew(gen_excp(content, ft_itoun(ov))));
+		new = ft_lst_insert(*lst, &elem, \
+		ft_lstnew(gen_excp(content, ft_itoun(ov))));
 	new->next = elem->next;
 	free(elem->content);
 	free(elem);

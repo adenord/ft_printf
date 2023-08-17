@@ -6,16 +6,20 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 18:30:42 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/14 16:05:17 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/17 11:18:52 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
 
-char	*formater(int len, int zeros, int i, char *minus, char *str)
+char	*formater(int len, int zeros, char *minus, char *str)
 {
 	char	*cut;
+	int		i;
 
+	i = -1;
+	if (str[0] == '-')
+		i++;
 	if (zeros > len)
 		cut = ft_calloc((zeros + 1), sizeof(char));
 	else
@@ -35,46 +39,40 @@ char	*formater(int len, int zeros, int i, char *minus, char *str)
 char	*zeroed(char *format, char *str)
 {
 	int		len;
-	int		i;
 	int		zeros;
 	char	*cut;
 	char	*minus;
 
 	minus = NULL;
 	len = ft_strlen(str);
-	i = -1;
 	zeros = ft_atoi(&format[1]);
 	if (str[0] == '-')
 	{
-		i++;
 		minus = &str[1];
 		zeros++;
 	}
-	cut = formater(len, zeros, i, minus, str);
+	cut = formater(len, zeros, minus, str);
 	return (cut);
 }
 
 char	*precision(char *format, char *str)
 {
 	int		len;
-	int		i;
 	int		zeros;
 	char	*cut;
 	char	*minus;
 
 	minus = NULL;
 	len = ft_strlen(str);
-	i = -1;
 	cut = ft_strchr(format, '.');
 	zeros = ft_atoi(&cut[1]);
 	if (str[0] == '-')
 	{
-		i++;
 		len--;
 		minus = &str[1];
 		zeros++;
 	}
-	cut = formater(len, zeros, i, minus, str);
+	cut = formater(len, zeros, minus, str);
 	return (cut);
 }
 
@@ -85,10 +83,11 @@ char	*min_width(char *format, char *str)
 	char	*ret;
 	int		i;
 
-	i = -1;
+	i = 0;
 	len = ft_strlen(str);
 	min_width = 0;
-	while (!ft_isdigit(format[++i]));
+	while (!ft_isdigit(format[i]))
+		i++;
 	if (format[i - 1] == '0' || format[i - 1] == '-' || format[i - 1] == '%')
 		min_width = ft_atoi(&format[i]);
 	i = -1;
@@ -104,14 +103,14 @@ char	*min_width(char *format, char *str)
 	return (str);
 }
 
-void	left_aligned(char *str)
+void	left_aligned(char *str, size_t len)
 {
-	int	y;
-	int	i;
+	size_t	y;
+	size_t	i;
 
 	i = 0;
 	y = 0;
-	while (str[i] == ' ')
+	while (str[i] == ' ' && i < (ft_strlen(str) - len))
 		i++;
 	while (str[i])
 	{

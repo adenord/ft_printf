@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 15:35:40 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/11 18:42:07 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/15 11:02:44 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,15 @@ static char	*convert_address(unsigned long adr)
 t_list	*fct_address(t_list **lst, t_list *elem, long adr)
 {
 	t_list	*new;
+	t_list	*temp;
+	char	*content;
 
-	new = ft_lst_insert(*lst, &elem, ft_lstnew(convert_address(adr)));
+	content = elem->content;
+	if (ft_strlen(content) == 2)
+		temp = ft_lstnew(convert_address(adr));
+	else
+		temp = ft_lstnew(gen_excp_adr(content, convert_address(adr)));
+	new = ft_lst_insert(*lst, &elem, temp);
 	new->next = elem->next;
 	free(elem->content);
 	free(elem);

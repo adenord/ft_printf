@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fct_integer_bonus.c                                :+:      :+:    :+:   */
+/*   exception_handler_2_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 15:05:38 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/17 11:04:55 by adenord          ###   ########.fr       */
+/*   Created: 2023/08/15 10:41:33 by adenord           #+#    #+#             */
+/*   Updated: 2023/08/15 10:50:20 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
 
-t_list	*fct_integer(t_list **lst, t_list *elem, int arg)
+char	*precision_str(char *format, char *str)
 {
-	t_list	*new;
-	char	*content;
+	int		len;
+	int		zeros;
+	char	*cut;
 
-	content = elem->content;
-	if (ft_strlen(content) == 2)
-		new = ft_lst_insert(*lst, &elem, ft_lstnew(ft_itoa(arg)));
-	else 
-		new = ft_lst_insert(*lst, &elem, \
-		ft_lstnew(gen_excp(content, ft_itoa(arg))));
-	new->next = elem->next;
-	free(elem->content);
-	free(elem);
-	return (new);
+	len = ft_strlen(str);
+	cut = ft_strchr(format, '.');
+	zeros = ft_atoi(&cut[1]);
+	if (zeros < len)
+	{
+		cut = ft_substr(str, 0, len - (len - zeros));
+		free(str);
+		return (cut);
+	}
+	else
+		return (str);
 }

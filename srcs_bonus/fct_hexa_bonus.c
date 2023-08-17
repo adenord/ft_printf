@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 11:13:11 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/11 18:42:30 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/17 11:06:27 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,28 @@ static char	*convert_hexa(int nbr, char *base)
 	return (ft_strdup(ret));
 }
 
+static void	x_or_x(char *base, char op)
+{
+	if (op == 'x')
+		ft_strcpy(base, "0123456789abcdef");
+	else if (op == 'X')
+		ft_strcpy(base, "0123456789ABCDEF");
+}
+
 t_list	*fct_hexa(t_list **lst, t_list *elem, int arg, char op)
 {
 	t_list	*new;
+	t_list	*temp;
+	char	*content;
+	char	base[17];
 
-	if (op == 'X')
-		new = ft_lst_insert(*lst, &elem, \
-		ft_lstnew(convert_hexa(arg, "0123456789ABCDEF")));
+	x_or_x(base, op);
+	content = elem->content;
+	if (ft_strlen(content) != 2)
+		temp = ft_lstnew(gen_excp(content, convert_hexa(arg, base)));
 	else
-		new = ft_lst_insert(*lst, &elem, \
-		ft_lstnew(convert_hexa(arg, "0123456789abcdef")));
+		temp = ft_lstnew(convert_hexa(arg, base));
+	new = ft_lst_insert(*lst, &elem, temp);
 	new->next = elem->next;
 	free(elem->content);
 	free(elem);
