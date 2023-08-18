@@ -6,7 +6,7 @@
 #    By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/29 17:32:43 by adenord           #+#    #+#              #
-#    Updated: 2023/08/15 10:42:08 by adenord          ###   ########.fr        #
+#    Updated: 2023/08/18 22:12:59 by adenord          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,11 +78,11 @@ all : $(NAME_LIB)
 .c.o : 
 	$(GCC) -c $< -o $(<:.c=.o)
 
-$(NAME_LIB) : libft $(OBJS)
+$(NAME_LIB) : fclean libft $(OBJS)
 	make -C libft/
 	ar rcs $@ $(OBJS) $(LIB_OBJS)
 
-bonus : libft $(OBJS) $(OBJS_BONUS)
+bonus : fclean libft $(OBJS) $(OBJS_BONUS)
 	make -C libft/
 	ar rcs $(NAME_LIB) $(OBJS_BONUS) $(LIB_OBJS)
 

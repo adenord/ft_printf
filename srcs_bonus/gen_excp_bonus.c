@@ -6,16 +6,22 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 21:58:16 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/17 10:56:46 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/18 22:09:13 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
-
 char	*gen_excp(char *format, char *str)
 {
 	size_t	len;
 
+	len = ft_strlen(str);
+	if (ft_strchr(format, '#') && (ft_strchr(format, 'x') || \
+		ft_strchr(format, 'X')))
+		str = hex_header(format, str);
+	if (ft_strchr(format, '+') && (ft_strchr(format, 'i') || \
+		ft_strchr(format, 'd')))
+		str = plus_header(str, len);
 	len = ft_strlen(str);
 	if (ft_strchr(format, '.'))
 		str = precision(format, str);

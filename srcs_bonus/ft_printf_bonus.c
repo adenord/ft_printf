@@ -6,12 +6,11 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 14:17:26 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/11 18:43:29 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/18 21:47:13 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
-#include <stdio.h>
 
 void	del_lst(void *content)
 {

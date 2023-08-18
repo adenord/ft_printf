@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:37:47 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/17 11:22:27 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/18 21:55:07 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ char	*formater(int len, int zeros, char *minus, char *str);
 char	*precision_str(char *format, char *str);
 char	*gen_excp_adr(char *format, char *str);
 t_list	*gen_excp_chr(t_list *temp2, t_list **lst, t_list *elem, int arg);
+char	*hex_header(char *format, char *str);
+char	*plus_header(char *str, int len);
 
 #endif

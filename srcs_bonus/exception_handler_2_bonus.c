@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 10:41:33 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/15 10:50:20 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/18 18:58:42 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,37 @@ char	*precision_str(char *format, char *str)
 	}
 	else
 		return (str);
+}
+
+char	*plus_header(char *str, int len)
+{
+	int		nbr;
+	char	*ret;
+
+	nbr = ft_atoi(str);
+	if (nbr >= 0)
+	{
+		ret = ft_calloc(len + 2, sizeof(char));
+		ft_strcat(ret, "+");
+		ft_strcat(ret, str);
+		free(str);
+		str = ret;
+	}
+	return (str);
+}
+
+char	*hex_header(char *format, char *str)
+{
+	char	*ret;
+
+	if (ft_strlen(str) == 1 && str[0] == '0')
+		return (str);
+	ret = ft_calloc(ft_strlen(str) + 3, sizeof(char));
+	if (format[ft_strlen(format) - 1] == 'x')
+		ft_strcat(ret, "0x");
+	else
+		ft_strcat(ret, "0X");
+	ft_strcat(ret, str);
+	free(str);
+	return (ret);
 }
