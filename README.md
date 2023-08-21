@@ -35,8 +35,7 @@ ft_printf("This is the test number %d\n", 42);
 ft_printf("This is another test number %x\n", 255);
 ft_printf("The address of this pointer is %p\n", &ptr);</code>
 <p>Output :</p>
-<code>
-This is a test
+<code>This is a test
 This is a test
 This is the test number 42
 This is another test number ff
