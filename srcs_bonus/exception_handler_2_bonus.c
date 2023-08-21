@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 10:41:33 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/18 18:58:42 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/21 13:17:49 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,19 @@ char	*hex_header(char *format, char *str)
 	ft_strcat(ret, str);
 	free(str);
 	return (ret);
+}
+
+char	*space_header(char *str)
+{
+	char	*ret;
+
+	if (ft_atoi(str) >= 0)
+	{
+		ret = ft_calloc(ft_strlen(str) + 2, sizeof(char));
+		ft_strcat(ret, " ");
+		ft_strcat(ret, str);
+		free(str);
+		return (ret);
+	}
+	return (str);
 }

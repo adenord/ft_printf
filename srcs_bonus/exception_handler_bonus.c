@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 18:30:42 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/18 22:03:25 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/21 13:52:57 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*formater(int len, int zeros, char *minus, char *str)
 	return (cut);
 }
 
-char	*zeroed(char *format, char *str)
+char	*zeroed(char *fmt, char *str)
 {
 	int		len;
 	int		zeros;
@@ -45,7 +45,7 @@ char	*zeroed(char *format, char *str)
 
 	minus = NULL;
 	len = ft_strlen(str);
-	zeros = ft_atoi(&format[1]);
+	zeros = ft_atoi(&fmt[1]);
 	if (str[0] == '-')
 	{
 		minus = &str[1];
@@ -55,7 +55,7 @@ char	*zeroed(char *format, char *str)
 	return (cut);
 }
 
-char	*precision(char *format, char *str)
+char	*precision(char *fmt, char *str)
 {
 	int		len;
 	int		zeros;
@@ -64,7 +64,7 @@ char	*precision(char *format, char *str)
 
 	minus = NULL;
 	len = ft_strlen(str);
-	cut = ft_strchr(format, '.');
+	cut = ft_strchr(fmt, '.');
 	zeros = ft_atoi(&cut[1]);
 	if (str[0] == '-')
 	{
@@ -76,7 +76,7 @@ char	*precision(char *format, char *str)
 	return (cut);
 }
 
-char	*min_width(char *format, char *str)
+char	*min_width(char *fmt, char *str)
 {
 	int		min_width;
 	int		len;
@@ -86,11 +86,11 @@ char	*min_width(char *format, char *str)
 	i = 0;
 	len = ft_strlen(str);
 	min_width = 0;
-	while (!ft_isdigit(format[i]) && format[i])
+	while (!ft_isdigit(fmt[i]) && fmt[i])
 		i++;
-	if (format[i - 1] == '0' || format[i - 1] == '-' || \
-		format[i - 1] == '%' || format[i - 1] == '+')
-		min_width = ft_atoi(&format[i]);
+	if (fmt[i - 1] == '0' || fmt[i - 1] == '-' || fmt[i - 1] == '%' \
+		|| fmt[i - 1] == '+' || fmt[i - 1] == ' ')
+		min_width = ft_atoi(&fmt[i]);
 	i = -1;
 	if (min_width > len)
 	{
