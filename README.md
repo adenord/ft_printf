@@ -12,6 +12,7 @@
 <h2>Index 📍</h2>
 <ul>
   <li><a href="#libft">What is ft_printf ? 👨‍💻</a></li>
+  <li><a href="#mandatory">Mandatory and bonus parts ⌨️</a></li>
   <li><a href="#usage">Usage 👷</a></li>
 </ul>
 
@@ -26,6 +27,20 @@ It will enable you to discover variadic functions in C.
 The key to a successful ft_printf is a well-structured and good extensible code.
 </code></pre></div>
 <p>For further information you can take a look at the <a alt="subject" href="https://github.com/adenord/ft_printf/blob/main/ft_printf.pdf"><strong>subject</strong></a>.</p>
+<h2 id="mandatory">Mandatory and bonus parts ⌨️</h2>
+<p>Here's the expectations about the mandatory part of the project :</p>
+<ul>
+  <li><strong>%c</strong> print a single character.</li>
+  <li><strong>%s</strong> print a string of characters.</li>
+  <li><strong>%p</strong> The void * pointer argument is printed in hexadecimal.</li>
+  <li><strong>%d</strong> print a decimal (base 10) number.</li>
+  <li><strong>%i</strong> print an integer in base 10.</li>
+  <li><strong>%u</strong> print an unsigned decimal (base 10) number.</li>
+  <li><strong>%x</strong> print a number in hexadecimal (base 16), with lowercase.</li>
+  <li><strong>%X</strong> print a number in hexadecimal (base 16), with uppercase.</li>
+  <li><strong>%%</strong> print a percent sign.</li>
+</ul>
+
 <h2 id="usage">Usage 👷</h2>
 <p>Some examples</p>
 <div><pre><code>int main(void)
