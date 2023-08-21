@@ -4,8 +4,8 @@
 <i>Because putnbr and putstr aren’t enough - 42 project</i></div>
 <p align="center">
 <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white">
-<img alt="number of lines" src="https://tokei.rs/b1/github/adenord/libft">
-<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/adenord/libft">
+<img alt="number of lines" src="https://tokei.rs/b1/github/adenord/ft_printf">
+<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/adenord/ft_printf">
 <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/adenord/libft">
 <img alt="Neovim" src="https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white">
 </p>
