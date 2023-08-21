@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 10:41:33 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/21 13:17:49 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/21 17:05:37 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*precision_str(char *format, char *str)
 	char	*cut;
 
 	len = ft_strlen(str);
-	cut = ft_strchr(format, '.');
+	cut = ft_strrchr(format, '.');
 	zeros = ft_atoi(&cut[1]);
 	if (zeros < len)
 	{

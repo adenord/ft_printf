@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 10:37:03 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/17 10:51:54 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/21 14:36:01 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_list	*fct_character(t_list **lst, t_list *elem, int arg)
 		new = gen_excp_chr(temp2, lst, elem, arg);
 	else
 	{
-		new = ft_lst_insert(*lst, &elem, ft_lstnew(temp2));
+		new = ft_lst_insert(*lst, &elem, temp2);
 		if (arg == 0)
 			new->len = 1;
 		new->next = elem->next;

@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 18:30:42 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/21 13:52:57 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/21 17:20:45 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,12 @@ char	*precision(char *fmt, char *str)
 	len = ft_strlen(str);
 	cut = ft_strchr(fmt, '.');
 	zeros = ft_atoi(&cut[1]);
+	if (zeros == 0 && ft_atoi(str) == 0 && \
+		ft_strlen(str) == 1 && !ft_isalpha(str[0]))
+	{
+		free(str);
+		return (ft_strdup(""));
+	}
 	if (str[0] == '-')
 	{
 		len--;
@@ -111,7 +117,7 @@ void	left_aligned(char *str, size_t len)
 
 	i = 0;
 	y = 0;
-	while (str[i] == ' ' && i < (ft_strlen(str) - len))
+	while (str[i] == ' ' && i < (ft_strlen(str) - len) && str[i])
 		i++;
 	while (str[i])
 	{

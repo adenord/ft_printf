@@ -6,12 +6,12 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 21:58:16 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/21 13:50:49 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/21 17:15:00 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
-#include <stdio.h>
+
 char	*gen_excp(char *fmt, char *str)
 {
 	size_t	len;
@@ -33,14 +33,14 @@ char	*gen_excp(char *fmt, char *str)
 		left_aligned(str, len);
 	return (str);
 }
-#include <stdio.h>
+
 char	*gen_excp_str(char *fmt, char *str)
 {
 	size_t	len;
 
-	len = ft_strlen(str);
 	if (ft_strchr(fmt, '.'))
 		str = precision_str(fmt, str);
+	len = ft_strlen(str);
 	str = min_width(fmt, str);
 	if (ft_strchr(fmt, '-'))
 		left_aligned(str, len);

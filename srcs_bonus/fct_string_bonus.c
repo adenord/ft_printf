@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 15:15:40 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/15 10:14:08 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/21 16:41:23 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,15 @@ t_list	*fct_string(t_list **lst, t_list *elem, char *arg)
 	t_list	*new;
 	t_list	*temp;
 	char	*content;
+	char	null[7];
 
 	content = elem->content;
 	if (!arg)
-		temp = ft_lstnew(ft_strdup("(null)"));
-	else if (ft_strlen(content) == 2)
+	{
+		ft_strcpy(null, "(null)");
+		arg = null;
+	}
+	if (ft_strlen(content) == 2)
 		temp = ft_lstnew(ft_strdup(arg));
 	else
 		temp = ft_lstnew(gen_excp_str(content, ft_strdup(arg)));
