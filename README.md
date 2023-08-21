@@ -6,7 +6,7 @@
 <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white">
 <img alt="number of lines" src="https://tokei.rs/b1/github/adenord/ft_printf">
 <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/adenord/ft_printf">
-<img alt="GitHub language count" src="https://img.shields.io/github/languages/count/adenord/libft">
+<img alt="GitHub language count" src="https://img.shields.io/github/languages/count/adenord/ft_printf">
 <img alt="Neovim" src="https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white">
 </p>
 <h2>Index 📍</h2>
