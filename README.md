@@ -50,13 +50,6 @@ My project works for both mandatory and bonus part.
 Manage any combination of the following flags: <strong>’-0.’</strong> and minimum field width with all conversions.
 </li>
   <li>Manage all the following flags: <strong>’# +’</strong>.</li>
-  <li><strong>%p</strong> The void * pointer argument is printed in hexadecimal.</li>
-  <li><strong>%d</strong> print a decimal (base 10) number.</li>
-  <li><strong>%i</strong> print an integer in base 10.</li>
-  <li><strong>%u</strong> print an unsigned decimal (base 10) number.</li>
-  <li><strong>%x</strong> print a number in hexadecimal (base 16), with lowercase.</li>
-  <li><strong>%X</strong> print a number in hexadecimal (base 16), with uppercase.</li>
-  <li><strong>%%</strong> print a percent sign.</li>
 </ul>
 
 
