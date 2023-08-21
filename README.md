@@ -20,8 +20,7 @@
 <blockquote>
 This project is pretty straight forward. You will recode printf. Hopefully you will be able to reuse it in future projects without the fear of being flagged as a cheater. You will mainly learn how to use variadic arguments.
 </blockquote>
-<div><pre><code>
-"printf" is a function in C language which allows you to write on the standard output some formatted text.
+<div><pre><code>"printf" is a function in C language which allows you to write on the standard output some formatted text.
 The versatility of the printf function in C represents a great exercise in programming. 
 It will enable you to discover variadic functions in C.
 The key to a successful ft_printf is a well-structured and good extensible code.
