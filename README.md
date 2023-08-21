@@ -29,7 +29,7 @@ The key to a successful ft_printf is a well-structured and good extensible code.
 <p>For further information you can take a look at the <a alt="subject" href="https://github.com/adenord/ft_printf/blob/main/ft_printf.pdf"><strong>subject</strong></a>.</p>
 <h2 id="mandatory">Mandatory and bonus parts ⌨️</h2>
 <blockquote>
-My project works for both mandatory and bonus part.
+This project works for both mandatory and bonus part.
 </blockquote>
 <p>Here's the expectations about the mandatory part of the project :</p>
 <ul>
