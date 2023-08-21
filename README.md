@@ -29,13 +29,12 @@ The key to a successful ft_printf is a well-structured and good extensible code.
 <p>For further information you can take a look at the <a alt="subject" href="https://github.com/adenord/ft_printf/blob/main/ft_printf.pdf"><strong>subject</strong></a>.</p>
 <h2 id="usage">Usage 👷</h2>
 <p>Some examples</p>
-<code><div>
-ft_printf("This is a test\n");
+<div>
+<code>ft_printf("This is a test\n");
 ft_printf("This is a %s\n", "test");
 ft_printf("This is the test number %d\n", 42);
 ft_printf("This is another test number %x\n", 255);
-ft_printf("The address of this pointer is %p\n", &ptr);
-</div></code>
+ft_printf("The address of this pointer is %p\n", &ptr);</code></div>
 <p>Output :</p>
 <code><div>
 This is a test
