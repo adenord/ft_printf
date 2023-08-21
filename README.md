@@ -28,6 +28,9 @@ The key to a successful ft_printf is a well-structured and good extensible code.
 </code></pre></div>
 <p>For further information you can take a look at the <a alt="subject" href="https://github.com/adenord/ft_printf/blob/main/ft_printf.pdf"><strong>subject</strong></a>.</p>
 <h2 id="mandatory">Mandatory and bonus parts ⌨️</h2>
+<blockquote>
+My project works for both mandatory and bonus part.
+</blockquote>
 <p>Here's the expectations about the mandatory part of the project :</p>
 <ul>
   <li><strong>%c</strong> print a single character.</li>
@@ -40,6 +43,22 @@ The key to a successful ft_printf is a well-structured and good extensible code.
   <li><strong>%X</strong> print a number in hexadecimal (base 16), with uppercase.</li>
   <li><strong>%%</strong> print a percent sign.</li>
 </ul>
+
+<p>About the bonus part ⭐️</p>
+<ul>
+  <li>
+Manage any combination of the following flags: <strong>’-0.’</strong> and minimum field width with all conversions.
+</li>
+  <li>Manage all the following flags: <strong>’# +’</strong>.</li>
+  <li><strong>%p</strong> The void * pointer argument is printed in hexadecimal.</li>
+  <li><strong>%d</strong> print a decimal (base 10) number.</li>
+  <li><strong>%i</strong> print an integer in base 10.</li>
+  <li><strong>%u</strong> print an unsigned decimal (base 10) number.</li>
+  <li><strong>%x</strong> print a number in hexadecimal (base 16), with lowercase.</li>
+  <li><strong>%X</strong> print a number in hexadecimal (base 16), with uppercase.</li>
+  <li><strong>%%</strong> print a percent sign.</li>
+</ul>
+
 
 <h2 id="usage">Usage 👷</h2>
 <p>Some examples</p>
