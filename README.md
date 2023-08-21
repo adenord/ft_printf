@@ -31,11 +31,11 @@ The key to a successful ft_printf is a well-structured and good extensible code.
 <p>Some examples</p>
 <div><pre><code>int main(void)
 {
-ft_printf("This is a test\n");
-ft_printf("This is a %s\n", "test");
-ft_printf("This is the test number %d\n", 42);
-ft_printf("This is another test number %x\n", 255);
-ft_printf("The address of this pointer is %p\n", &ptr);
+    ft_printf("This is a test\n");
+    ft_printf("This is a %s\n", "test");
+    ft_printf("This is the test number %d\n", 42);
+    ft_printf("This is another test number %x\n", 255);
+    ft_printf("The address of this pointer is %p\n", &ptr);
 }
 </code></pre></div>
 <p>Output :</p>
