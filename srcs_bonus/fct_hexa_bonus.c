@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 11:13:11 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/18 21:54:18 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/22 22:55:50 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static char	*convert_hexa(int nbr, char *base)
 	i = 0;
 	if (nbr == 0)
 		return (ft_strdup("0"));
+	if (nbr > 2147483647 || nbr == -2147483648)
+		return (ft_strdup("80000000"));
 	if (nbr < 0)
 	{
 		nbr = -nbr;

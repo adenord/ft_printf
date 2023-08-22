@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 21:58:16 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/21 17:15:00 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/22 23:05:47 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ char	*gen_excp_str(char *fmt, char *str)
 {
 	size_t	len;
 
+	if (fmt[1] == '0' && !ft_strchr(fmt, '.') && !ft_strchr(fmt, '-') \
+		&& str[0] == '%')
+		str = zeroed(fmt, str);
 	if (ft_strchr(fmt, '.'))
 		str = precision_str(fmt, str);
 	len = ft_strlen(str);

@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 18:30:42 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/21 17:20:45 by adenord          ###   ########.fr       */
+/*   Updated: 2023/08/22 22:27:28 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ char	*min_width(char *fmt, char *str)
 	i = 0;
 	len = ft_strlen(str);
 	min_width = 0;
-	while (!ft_isdigit(fmt[i]) && fmt[i])
+	while ((!ft_isdigit(fmt[i]) || fmt[i] == '0') && fmt[i] && fmt[i] != '.')
 		i++;
 	if (fmt[i - 1] == '0' || fmt[i - 1] == '-' || fmt[i - 1] == '%' \
 		|| fmt[i - 1] == '+' || fmt[i - 1] == ' ')
