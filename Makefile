@@ -6,9 +6,11 @@
 #    By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/29 17:32:43 by adenord           #+#    #+#              #
-#    Updated: 2023/10/17 12:41:20 by adenord          ###   ########.fr        #
+#    Updated: 2023/10/18 19:13:59 by adenord          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+MAKEFLAGS += --silent
 
 SRCS =./srcs/nbr_args.c ./srcs/ft_printf.c ./srcs/fct_hexa.c \
 ./srcs/fct_address.c ./srcs/fct_unsigned.c ./srcs/cutting.c \
@@ -37,23 +39,31 @@ NAME_LIB = libftprintf.a
 all : $(NAME_LIB)
 
 $(NAME_LIB) : $(OBJS)
+	echo "Creating your static library ..."
 	make -C libft/
 	mv libft/libft.a .
 	mv libft.a $(NAME_LIB)
 	$(AR) $(ARFLAGS) $@ $^
+	echo "Done !"
 
 bonus : $(OBJS_BONUS)
+	echo "Creating your static library (bonus) ..."
 	make -C libft/
 	mv libft/libft.a .
 	mv libft.a $(NAME_LIB)
 	ar rcs $(NAME_LIB) $(OBJS_BONUS) $(L_OBJS)
+	echo "Done !"
 
 clean :
+	echo "Deleting your objects files ..."
 	make clean -C libft/
 	$(RM) $(OBJS)
 	$(RM) $(OBJS_BONUS)
+	echo "Done !"
 
 fclean : clean
+	echo "Deleting your static library ..."
 	$(RM) libftprintf.a
+	echo "Done !"
 
 re : fclean all
