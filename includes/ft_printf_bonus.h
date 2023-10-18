@@ -6,7 +6,7 @@
 /*   By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:37:47 by adenord           #+#    #+#             */
-/*   Updated: 2023/08/21 13:52:28 by adenord          ###   ########.fr       */
+/*   Updated: 2023/10/17 10:12:36 by adenord          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
-# include "../libft/includes/libft.h"
+# include "../libft/libft.h"
 
 int		ft_printf(const char *format, ...);
 int		nbr_args(const char *format);

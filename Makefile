@@ -6,7 +6,7 @@
 #    By: adenord <alexandre.denord@gmail.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/29 17:32:43 by adenord           #+#    #+#              #
-#    Updated: 2023/09/07 12:07:30 by adenord          ###   ########.fr        #
+#    Updated: 2023/10/17 12:41:20 by adenord          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,75 +24,36 @@ SRCS_BONUS =./srcs_bonus/nbr_args_bonus.c ./srcs_bonus/ft_printf_bonus.c \
 ./srcs_bonus/exception_handler_bonus.c ./srcs_bonus/gen_excp_bonus.c \
 ./srcs_bonus/exception_handler_2_bonus.c
 
-LSRCS1 =./srcs/part1/ft_atoi.c ./srcs/part1/ft_bzero.c ./srcs/part1/ft_calloc.c \
-./srcs/part1/ft_isalnum.c ./srcs/part1/ft_isalpha.c ./srcs/part1/ft_isascii.c \
-./srcs/part1/ft_isdigit.c ./srcs/part1/ft_isprint.c ./srcs/part1/ft_memchr.c \
-./srcs/part1/ft_memcmp.c ./srcs/part1/ft_memcpy.c ./srcs/part1/ft_memmove.c \
-./srcs/part1/ft_memset.c ./srcs/part1/ft_strchr.c ./srcs/part1/ft_strdup.c \
-./srcs/part1/ft_strlcat.c ./srcs/part1/ft_strlcpy.c ./srcs/part1/ft_strlen.c \
-./srcs/part1/ft_strncmp.c ./srcs/part1/ft_strnstr.c ./srcs/part1/ft_strrchr.c \
-./srcs/part1/ft_tolower.c ./srcs/part1/ft_toupper.c
-
-
-LSRCS2 = ./srcs/part2/ft_itoa.c ./srcs/part2/ft_putchar_fd.c \
-./srcs/part2/ft_putendl_fd.c ./srcs/part2/ft_putnbr_fd.c \
-./srcs/part2/ft_putstr_fd.c ./srcs/part2/ft_split.c ./srcs/part2/ft_striteri.c \
-./srcs/part2/ft_strjoin.c ./srcs/part2/ft_strmapi.c ./srcs/part2/ft_strtrim.c \
-./srcs/part2/ft_substr.c
-
-
-LSRCS_BONUS = ./srcs/bonus/ft_lstadd_back.c ./srcs/bonus/ft_lstadd_front.c \
-./srcs/bonus/ft_lstclear.c ./srcs/bonus/ft_lstdelone.c \
-./srcs/bonus/ft_lstiter.c ./srcs/bonus/ft_lstlast.c ./srcs/bonus/ft_lstmap.c \
-./srcs/bonus/ft_lstnew.c ./srcs/bonus/ft_lstsize.c ./srcs/bonus/ft_lst_insert.c
-
-
-LSRCS_ADDITIONAL = ./srcs/additional_fct/ft_memccpy.c \
-./srcs/additional_fct/ft_strcat.c ./srcs/additional_fct/ft_strcmp.c \
-./srcs/additional_fct/ft_strcpy.c ./srcs/additional_fct/ft_strncat.c \
-./srcs/additional_fct/ft_strncpy.c ./srcs/additional_fct/ft_strstr.c \
-./srcs/additional_fct/get_next_line.c ./srcs/additional_fct/ft_putstr.c \
-./srcs/additional_fct/ft_putchar.c ./srcs/additional_fct/ft_putnbr.c \
-./srcs/additional_fct/ft_strrev.c
-
-
-LSRCS1_PATH = $(patsubst ./srcs/part1/%, ./libft/srcs/part1/%, $(LSRCS1))
-LSRCS2_PATH = $(patsubst ./srcs/part2/%, ./libft/srcs/part2/%, $(LSRCS2))
-LSRCS_BONUS_PATH = $(patsubst ./srcs/bonus/%, ./libft/srcs/bonus/%, $(LSRCS_BONUS))
-LSRCS_ADDITIONAL_PATH = $(patsubst ./srcs/additional_fct/%, \
-./libft/srcs/additional_fct/%, $(LSRCS_ADDITIONAL))
-
-LIB_OBJS = $(LSRCS1_PATH:.c=.o) $(LSRCS2_PATH:.c=.o) $(LSRCS_BONUS_PATH:.c=.o) \
-$(LSRCS_ADDITIONAL_PATH:.c=.o)
+CC := gcc
+CPPFLAGS := -I includes/
+CFLAGS := -Wall -Wextra -Werror
+ARFLAGS := rcs
 
 OBJS = $(SRCS:.c=.o)
-
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 NAME_LIB = libftprintf.a
 
-GCC = gcc -Wall -Wextra -Werror -I includes/
-
 all : $(NAME_LIB)
 
-.c.o : 
-	$(GCC) -c $< -o $(<:.c=.o)
-
-$(NAME_LIB) : fclean libft $(OBJS)
+$(NAME_LIB) : $(OBJS)
 	make -C libft/
-	ar rcs $@ $(OBJS) $(LIB_OBJS)
+	mv libft/libft.a .
+	mv libft.a $(NAME_LIB)
+	$(AR) $(ARFLAGS) $@ $^
 
-bonus : fclean libft $(OBJS) $(OBJS_BONUS)
+bonus : $(OBJS_BONUS)
 	make -C libft/
-	ar rcs $(NAME_LIB) $(OBJS_BONUS) $(LIB_OBJS)
+	mv libft/libft.a .
+	mv libft.a $(NAME_LIB)
+	ar rcs $(NAME_LIB) $(OBJS_BONUS) $(L_OBJS)
 
 clean :
-	make -C libft/ clean
-	rm -rf $(OBJS)
-	rm -rf $(OBJS_BONUS)
+	make clean -C libft/
+	$(RM) $(OBJS)
+	$(RM) $(OBJS_BONUS)
 
 fclean : clean
-	make -C libft/ clean
-	rm -rf libftprintf.a
+	$(RM) libftprintf.a
 
 re : fclean all
